@@ -46,10 +46,6 @@ GitHubSignIn githubSignIn = GitHubSignIn(
 
 Call the `signIn` method to trigger the OAuth flow:
 
-dart
-
-Copy code
-
 `final result = await githubSignIn.signIn(context);
 
 if (result.status == GitHubSignInResultStatus.ok) {
