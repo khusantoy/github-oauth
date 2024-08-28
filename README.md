@@ -64,9 +64,6 @@ if (result.status == GitHubSignInResultStatus.ok) {
 
 You can customize the WebView used during the sign-in process by passing additional parameters to `GitHubSignInPage`:
 
-dart
-
-Copy code
 
 `GitHubSignInPage(
   url: 'authorization-url',
@@ -79,7 +76,8 @@ Copy code
 ## Example
 
 Here’s a complete example of how to use the `github_oauth` package:
-`import 'package:flutter/material.dart';
+``` 
+import 'package:flutter/material.dart';
 import 'package:github_oauth/github_oauth.dart';
 
 void main() => runApp(MyApp());
@@ -125,7 +123,7 @@ class SignInPage extends StatelessWidget {
       ),
     );
   }
-}`
+}```
 
 ## Error Handling
 
