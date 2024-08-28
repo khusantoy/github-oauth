@@ -75,8 +75,8 @@ You can customize the WebView used during the sign-in process by passing additio
 
 ## Example
 
-Here’s a complete example of how to use the `github_oauth` package:
-``` 
+Here's a complete example of how to use the `github_oauth` package:
+`
 import 'package:flutter/material.dart';
 import 'package:github_oauth/github_oauth.dart';
 
@@ -123,7 +123,7 @@ class SignInPage extends StatelessWidget {
       ),
     );
   }
-}```
+}`
 
 ## Error Handling
 
