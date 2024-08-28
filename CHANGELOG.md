@@ -1,3 +1,3 @@
-## 0.0.1
+## 0.0.2
 
-* TODO: Describe initial release.
+* GITHUB_OAUTH: After successful sign-in, the package fetches detailed user data from GitHub.
