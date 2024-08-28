@@ -19,8 +19,10 @@ class GitHubSignIn {
 
   final Dio _dio;
 
-  final String _githubAuthorizedUrl = "https://github.com/login/oauth/authorize";
-  final String _githubAccessTokenUrl = "https://github.com/login/oauth/access_token";
+  final String _githubAuthorizedUrl =
+      "https://github.com/login/oauth/authorize";
+  final String _githubAccessTokenUrl =
+      "https://github.com/login/oauth/access_token";
 
   GitHubSignIn({
     required this.clientId,
@@ -93,14 +95,20 @@ class GitHubSignIn {
 
       if (response.statusCode == 200) {
         var body = response.data;
+        String accessToken = body["access_token"];
+
+        var userProfile = await _getUserProfile(accessToken);
+
         return GitHubSignInResult(
           GitHubSignInResultStatus.ok,
-          token: body["access_token"],
+          token: accessToken,
+          userProfile: userProfile,
         );
       } else {
         return GitHubSignInResult(
           GitHubSignInResultStatus.failed,
-          errorMessage: "Unable to obtain token. Received: ${response.statusCode}",
+          errorMessage:
+              "Unable to obtain token. Received: ${response.statusCode}",
         );
       }
     } catch (e) {
@@ -113,5 +121,26 @@ class GitHubSignIn {
 
   String _generateAuthorizedUrl() {
     return "$_githubAuthorizedUrl?client_id=$clientId&redirect_uri=$redirectUrl&scope=$scope&allow_signup=$allowSignUp";
+  }
+
+  Future<Map<String, dynamic>?> _getUserProfile(String accessToken) async {
+    try {
+      final response = await _dio.get(
+        "https://api.github.com/user",
+        options: Options(
+          headers: {
+            "Authorization": "token $accessToken",
+            "Accept": "application/json",
+          },
+        ),
+      );
+
+      if (response.statusCode == 200) {
+        return response.data;
+      }
+    } catch (e) {
+      print("Failed to get user profile: $e");
+    }
+    return null;
   }
 }

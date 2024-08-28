@@ -2,16 +2,17 @@ class GitHubSignInResult {
   final String? token;
   final GitHubSignInResultStatus status;
   final String? errorMessage;
+  final Map<String, dynamic>? userProfile;
 
   GitHubSignInResult(
     this.status, {
     this.token,
     this.errorMessage,
+    this.userProfile,
   }) : assert(
-          (status == GitHubSignInResultStatus.ok && token != null) ||
-              (status != GitHubSignInResultStatus.ok && errorMessage != null),
-          "Error message must be provided for failed or cancelled statuses, and token must be provided for success."
-        );
+            (status == GitHubSignInResultStatus.ok && token != null) ||
+                (status != GitHubSignInResultStatus.ok && errorMessage != null),
+            "Error message must be provided for failed or cancelled statuses, and token must be provided for success.");
 }
 
 enum GitHubSignInResultStatus {
