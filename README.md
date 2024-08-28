@@ -15,8 +15,8 @@
 
 Add `github_oauth` to your `pubspec.yaml`:
 
-```dependencies:
-  github_oauth: latest_version` ``
+`dependencies:
+  github_oauth: latest_version`
 
 Then run `flutter pub get` to install the package.
 
@@ -34,13 +34,13 @@ To use GitHub OAuth, you need to set up an OAuth app on GitHub. Follow these ste
 
 Import the package and initialize `GitHubSignIn` with your GitHub OAuth credentials:
 
-```import 'package:github_oauth/github_oauth.dart';
+`import 'package:github_oauth/github_oauth.dart';
 
 GitHubSignIn githubSignIn = GitHubSignIn(
   clientId: 'your-client-id',
   clientSecret: 'your-client-secret',
   redirectUrl: 'your-redirect-url',
-);` ``
+);`
 
 ### 3. Sign In with GitHub
 
@@ -79,7 +79,7 @@ Copy code
 ## Example
 
 Here’s a complete example of how to use the `github_oauth` package:
-```import 'package:flutter/material.dart';
+`import 'package:flutter/material.dart';
 import 'package:github_oauth/github_oauth.dart';
 
 void main() => runApp(MyApp());
@@ -125,7 +125,7 @@ class SignInPage extends StatelessWidget {
       ),
     );
   }
-}` ``
+}`
 
 ## Error Handling
 
@@ -138,7 +138,7 @@ The `GitHubSignInResult` includes status and error messages, which can help you 
 } else {
   // Sign-in failed
   print('Error: ${result.errorMessage}');
-}` ``
+}`
 
 ## Contribution
 
