@@ -1,7 +1,8 @@
 name: github_oauth
-description: "A new Flutter package project."
+description: "Effortlessly add GitHub login to your app for secure and seamless authentication."
 version: 0.0.1
-homepage:
+homepage: https://github.com/khusantoy/github-oauth
+license: MIT
 
 environment:
   sdk: ^3.5.1
