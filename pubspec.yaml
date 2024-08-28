@@ -1,7 +1,7 @@
 name: github_oauth
 description: "Effortlessly add GitHub login to your app for secure and seamless authentication."
 version: 0.0.2
-repository: https://github.com/khusantoy/blj-search
+repository: https://github.com/khusantoy/github-oauth
 homepage: https://github.com/khusantoy/github-oauth
 license: MIT
 
